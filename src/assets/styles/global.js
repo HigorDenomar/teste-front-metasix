@@ -12,9 +12,22 @@ export default createGlobalStyle`
   }
 
   body {
+    background: #FAFAFA;
     color: #303030;
-    font-family: 'Roboto', sans-serif;
     font-size: 1.6rem;
     -webkit-font-smoothing: antialiased;
+  }
+
+  body,
+  input,
+  button {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 2rem;
   }
 `;
