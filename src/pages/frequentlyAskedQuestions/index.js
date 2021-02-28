@@ -1,6 +1,10 @@
-import { FaSearch, FaPlusCircle } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
+import { FaSearch } from 'react-icons/fa';
+
+import api from '../../services/api';
 
 import Header from '../../components/Header';
+import QuestionsSection from '../../components/QuestionsSection';
 
 import {
   Content,
@@ -8,12 +12,18 @@ import {
 } from './styles';
 
 export default function FrequentlyAskedQuestions() {
+  const [questions, setQuestions] = useState();
+
+  useEffect(() => {
+    setQuestions(api.results);
+  }, []);
+
   return (
     <>
       <Header />
 
-      <Content>
-        <div className="title container">
+      <Content className="container">
+        <div className="title">
           <h1>FAQ - Perguntas Frequentes</h1>
 
           <form className="search">
@@ -31,26 +41,8 @@ export default function FrequentlyAskedQuestions() {
           </form>
         </div>
 
-        <QuestionBar className="container">
-          <span>Pergunta</span>
-
-          <ul>
-            <li>
-              <button>
-                <FaPlusCircle />
-
-                Nova Pergunta
-              </button>
-            </li>
-
-            <li>Ordem</li>
-            <li>Editar</li>
-            <li>Excluir</li>
-          </ul>
-        </QuestionBar>
-
-
+        <QuestionsSection questions={ questions } />
       </Content>
     </>
-   );
+  );
 }
