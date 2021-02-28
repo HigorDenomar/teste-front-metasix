@@ -17,6 +17,7 @@ export const Content = styled.main`
         display: flex;
         align-items: center;
         height: 3.7rem;
+        margin-right: -1.5rem;
 
         input {
           width: 27.9rem;
@@ -58,6 +59,60 @@ export const Content = styled.main`
             background: transparent;
             color: #0168B4;
           }
+        }
+      }
+    }
+  }
+`;
+
+export const QuestionBar = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0168B4;
+  color: #FFF;
+  max-width: 1760px;
+  height: min-content;
+  padding: 0 0 0 2rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+
+  ul {
+    height: 3.6rem;
+    display: flex;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 2rem;
+
+      & + li {
+        border-left: 1px solid #FFF;
+      }
+
+      &:first-child {
+        cursor: pointer;
+      }
+
+      button {
+        height: 100%;
+        background: transparent;
+        border: 0;
+        outline: none;
+        color: #FFF;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+        cursor: pointer;
+
+        svg {
+          margin-right: 1rem;
+          font-size: 2rem;
         }
       }
     }
