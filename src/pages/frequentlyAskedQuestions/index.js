@@ -8,15 +8,26 @@ import QuestionsSection from '../../components/QuestionsSection';
 
 import {
   Content,
-  QuestionBar,
 } from './styles';
 
 export default function FrequentlyAskedQuestions() {
   const [questions, setQuestions] = useState();
 
-  useEffect(() => {
-    setQuestions(api.results);
-  }, []);
+  async function handleGetData() {
+    try {
+      const { data } = await api.get('parse/classes/FAQ', {
+        headers: {
+          'X-Parse-Application-Id': process.env.REACT_APP_HEADER_AUTHORIZATION,
+        }
+      });
+  
+      setQuestions(data.results);
+    } catch (error) {
+      console.error("Opss, não foi possível buscar as perguntas...", error);
+    }
+  }
+
+  useEffect(handleGetData, []);
 
   return (
     <>
