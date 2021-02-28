@@ -11,7 +11,9 @@ import {
 } from './styles';
 
 export default function FrequentlyAskedQuestions() {
-  const [questions, setQuestions] = useState();
+  const [questions, setQuestions] = useState([]);
+  const [filteredQuestions, setFilteredQuestions] = useState();
+  const [search, setSearch] = useState('');
 
   async function handleGetData() {
     try {
@@ -29,6 +31,15 @@ export default function FrequentlyAskedQuestions() {
 
   useEffect(handleGetData, []);
 
+  useEffect(() => {
+    const filtered = questions.filter(({ question }) => {
+
+      return question.toLowerCase().includes(search) && question;
+    });
+
+    setFilteredQuestions(filtered);
+  }, [search]);
+
   return (
     <>
       <Header />
@@ -39,9 +50,11 @@ export default function FrequentlyAskedQuestions() {
 
           <form className="search">
             <input
-              type="text"
+              type="search"
               name="search"
               placeholder="Busque por termo..."
+              value={search}
+              onChange={event => setSearch(event.target.value.toLowerCase())}
             />
 
             <button>
@@ -52,7 +65,9 @@ export default function FrequentlyAskedQuestions() {
           </form>
         </div>
 
-        <QuestionsSection questions={ questions } />
+        <QuestionsSection
+          questions={ filteredQuestions ? filteredQuestions : questions }
+        />
       </Content>
     </>
   );
