@@ -11,8 +11,8 @@ export const Container = styled.header`
     align-items: center;
     height: 100%;
     padding: 2rem;
-
-    img {
+    
+    a, img {
       height: 100%;
     }
 

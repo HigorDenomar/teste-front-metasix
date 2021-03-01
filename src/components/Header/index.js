@@ -15,7 +15,9 @@ export default function Header() {
     <>
       <Container>
         <div className="container">
-          <img src={ logo } alt="Prefeitura Boa vista"/>
+          <NavLink to="/">
+            <img src={ logo } alt="Prefeitura Boa vista"/>
+          </NavLink>
 
           <div className="icons-wrapper">
             <div className="icon-item">
