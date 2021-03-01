@@ -12,7 +12,7 @@ import {
 
 export default function FrequentlyAskedQuestions() {
   const [questions, setQuestions] = useState([]);
-  const [filteredQuestions, setFilteredQuestions] = useState();
+  const [filteredQuestions, setFilteredQuestions] = useState([]);
   const [search, setSearch] = useState('');
 
   async function handleGetData() {
@@ -64,9 +64,9 @@ export default function FrequentlyAskedQuestions() {
             </button>
           </form>
         </div>
-
+        
         <QuestionsSection
-          questions={ filteredQuestions ? filteredQuestions : questions }
+          questions={ filteredQuestions.length !== 0 ? filteredQuestions : questions }
         />
       </Content>
     </>

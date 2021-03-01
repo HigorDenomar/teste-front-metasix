@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import { FaSignOutAlt, FaTh } from 'react-icons/fa';
 
 import Nav from '../Nav';
@@ -33,10 +34,10 @@ export default function Header() {
       </Container>
 
       <Nav>
-        <li>Home</li>
-        <li>FAQ</li>
-        <li>Locais</li>
-        <li>Categorias</li>
+        <li><NavLink to="/" exact activeClassName="active">Home</NavLink></li>
+        <li><NavLink to="faq" activeClassName="active">FAQ</NavLink></li>
+        <li><NavLink to="locais" activeClassName="active">Locais</NavLink></li>
+        <li><NavLink to="categorias" activeClassName="active">Categorias</NavLink></li>
       </Nav>
     </>
    );

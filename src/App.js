@@ -1,11 +1,11 @@
-import FrequentlyAskedQuestions from './pages/frequentlyAskedQuestions';
+import Routes from './routes';
 import GlobalStyles from './assets/styles/global';
 
 export default function App() {
   return (
     <>
       <GlobalStyles />
-      <FrequentlyAskedQuestions />
+      <Routes />
     </>
   );
 }
