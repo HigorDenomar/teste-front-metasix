@@ -1,45 +1,68 @@
-# teste-front-metasix
+ <h3 align="center">Desafio front-end</h3>
 
-Teste para candidatos à vaga de front-end na Metasix.
+<br />
 
-## How to
+<div align="center">
+  <a href="https://www.linkedin.com/in/higordenomar/">
+    <img alt="Higor Denomar" src="https://img.shields.io/badge/-HigorDenomar-0168B4?style=flat&logo=Linkedin&logoColor=white" />
+  </a>
 
-+ Dê um fork nesse repositório;
-+ Utilize Angular ou React;
-+ CSS livre (CSS vanilla, BEM, Bootstrap, Materialize, Bulma, etc);
-+ Entrega: até 24/12/2019;
-+ Ao finalizar, responda o e-mail com o link do seu repositório;
+  <a href="mailto:higordenomar@hotmail.com">
+    <img alt="Higor Denomar" src="https://img.shields.io/badge/-higordenomar%40gmail.com-0168B4?style=flat&logo=Gmail&logoColor=white" />
+  </a>
+  <br><br>
+</div>
 
-### Colorset
+Projeto construído utilizando [React.js](https://pt-br.reactjs.org/) e [Styled Components](https://styled-components.com/docs/basics).
 
-+ Azul: #0168B4
-+ Preto: #303030
-+ Cinza: #707070
-+ Vermelho: #DC3545
+</br>
 
-### Fonte
+> Saiba mais sobre o desafio [clicando aqui.](./.github/README.md)
 
-Roboto
+<br/>
 
+## 📷 Screenshots
 
-### Onde está a tela? E os dados da API?
+![Tela de FAQ](./.github/faq.jpg)
 
-+ Acesse seu e-mail, a tela a ser desenvolvida está em anexo;
-+ Veja os dados para a chamada à API no fim do e-mail;
+<br/><br/>
 
-Caso não tenha recebido, tenha alguma dúvida ou teve algum problema para se conectar, envie um e-mail para alessandra.souza@metasix.com.br.
-
-
-### Dicas
-
-Para testar o retorno da API, algumas sugestões de extensões para Chrome (também existem opções para Firefox):
-
-+ [Talend API Tester](https://chrome.google.com/webstore/detail/talend-api-tester-free-ed/aejoelaoggembcahagimdiliamlcdmfm)
-+ [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=pt_BR)
+## 💻 Instalação
 
 
-### Está inseguro/a? :scream:
+```sh
+# Clone este repositório (requer o git instalado):
 
-Não se desespere! Tenha confiança e faça o seu melhor, afinal você não estudou por tanto tempo à toa. Grandes problemas são mais fáceis de resolver se você os quebra em pequenos pedaços administráveis. Boa sorte! 
+> git clone https://github.com/HigorDenomar/teste-front-metasix.git
 
-:relaxed: :four_leaf_clover:
+
+# Vá para o diretório do projeto:
+
+> cd teste-front-metasix
+
+
+# Instale as dependência (requer o node.js instalado):
+
+> npm install
+
+
+# inicie o projeto:
+
+> npm start
+```
+
+O site irá abrir em http://localhost:3000
+
+### Configurando variáveis de ambiente
+Para as requisições a api funcionarem corretamente é necessário criar um arquivo ``.env`` na raiz do projeto e setar as seguintes variáveis:
+```sh
+REACT_APP_API_URL
+```
+
+```
+REACT_APP_HEADER_AUTHORIZATION
+```
+(Veja um exemplo de utilização das variáveis de ambiente no arquivo ``example.env``)
+
+</br></br>
+<i>Code By [Higor Denomar](https://github.com/HigorDenomar)</i>
