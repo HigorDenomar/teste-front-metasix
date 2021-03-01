@@ -43,9 +43,9 @@ export default function FrequentlyAskedQuestions() {
   function handleSearchQuestion(event) {
     event.preventDefault();
 
-    const filtered = questions.filter(({ question }) => {
+    const filtered = questions.filter(({ title }) => {
 
-      return question.toLowerCase().includes(search) && question;
+      return title.toLowerCase().includes(search) && title;
     });
 
     setFilteredQuestions(filtered);
