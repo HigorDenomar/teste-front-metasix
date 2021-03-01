@@ -4,7 +4,7 @@ import { FaSearch } from 'react-icons/fa';
 import api from '../../services/api';
 
 import Header from '../../components/Header';
-import QuestionsSection from '../../components/QuestionsSection';
+import ListSection from '../../components/ListSection';
 
 import {
   Content,
@@ -22,8 +22,17 @@ export default function FrequentlyAskedQuestions() {
           'X-Parse-Application-Id': process.env.REACT_APP_HEADER_AUTHORIZATION,
         }
       });
+
+      const result = data.results.map(item => {
+        return {
+          id: item.objectId,
+          title: item.question,
+          position: item.position,
+          answer: item.answer,
+        }
+      });
   
-      setQuestions(data.results);
+      setQuestions(result);
     } catch (error) {
       console.error("Opss, não foi possível buscar as perguntas...", error);
     }
@@ -67,8 +76,10 @@ export default function FrequentlyAskedQuestions() {
           </form>
         </div>
         
-        <QuestionsSection
-          questions={ filteredQuestions.length !== 0 ? filteredQuestions : questions }
+        <ListSection
+          title="Pergunta"
+          list={ filteredQuestions.length !== 0 ? filteredQuestions : questions }
+          isAQuestion
         />
       </Content>
     </>

@@ -6,6 +6,7 @@ export const TopQuestionBar = styled.div`
   align-items: center;
   background: #0168B4;
   color: #FFF;
+  width: 100%;
   max-width: 1760px;
   height: min-content;
   padding: 0 0 0 2rem;
@@ -54,6 +55,7 @@ export const TopQuestionBar = styled.div`
 `;
 
 export const QuestionWrapper = styled.ul`
+  width: 100%;
   max-width: 1760px;
   list-style: none;
 
@@ -70,7 +72,7 @@ export const QuestionWrapper = styled.ul`
       height: 4.2rem;
 
       span {
-        cursor: pointer;
+        cursor: ${ props => props.isAQuestion ? 'pointer' : 'default'};
         width: 100%;
       }
 
