@@ -17,7 +17,7 @@ Projeto construído utilizando [React.js](https://pt-br.reactjs.org/) e [Styled 
 
 </br>
 
-> Saiba mais sobre o desafio [clicando aqui.](./.github/README.md)
+> Saiba mais sobre o desafio [clicando aqui.](./.github/CHALLENGE.md)
 
 <br/>
 
