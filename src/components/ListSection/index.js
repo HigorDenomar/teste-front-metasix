@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaEdit, FaTrash, FaPlusCircle } from 'react-icons/fa';
 
 import {
@@ -8,6 +8,7 @@ import {
 
 export default function ListSection({ list, title, isAQuestion = false }) {
   const [answerClass, setAnswerClass] = useState('');
+  const [localList, setList] = useState([]);
 
   function toggleAnswer(id) {
     if(id === answerClass) {
@@ -17,6 +18,14 @@ export default function ListSection({ list, title, isAQuestion = false }) {
 
     setAnswerClass(id);
   }
+
+  function handleReverseListOrder() {
+    const reversedListOrder = localList.reverse();
+
+    setList([...reversedListOrder]);
+  }
+
+  useEffect(() => setList(list), [list]);
 
   return (
     <>
@@ -32,7 +41,7 @@ export default function ListSection({ list, title, isAQuestion = false }) {
             </button>
           </li>
 
-          <li>Ordem</li>
+          <li onClick={handleReverseListOrder}>Ordem</li>
           <li>Editar</li>
           <li>Excluir</li>
         </ul>
@@ -42,7 +51,7 @@ export default function ListSection({ list, title, isAQuestion = false }) {
         answerId={ answerClass }
         isAQuestion={ isAQuestion }
       >
-        { list?.map((item, index) => (
+        { localList?.map((item, index) => (
           <li
             key={ item.id }
           >
@@ -50,7 +59,7 @@ export default function ListSection({ list, title, isAQuestion = false }) {
               <span onClick={() => isAQuestion && toggleAnswer(item.id)}>{ item.title }</span>
 
               <ol className="options">
-                <li className="index">{ item.position | index + 1 }</li>
+                <li className="index">{ item.position }</li>
                 <li><FaEdit className="edit"/></li>
                 <li><FaTrash className="trash"/></li>
               </ol>

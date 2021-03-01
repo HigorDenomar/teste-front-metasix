@@ -24,13 +24,20 @@ export const TopQuestionBar = styled.div`
       align-items: center;
       height: 100%;
       padding: 0 2rem;
+      transition: 0.3s;
 
       & + li {
         border-left: 1px solid #FFF;
       }
 
-      &:first-child {
+      &:nth-child(1),
+      &:nth-child(2) {
         cursor: pointer;
+
+        &:hover {
+          filter: brightness(90%);
+          transform: translateY(-0.1rem)
+        }
       }
 
       button {
