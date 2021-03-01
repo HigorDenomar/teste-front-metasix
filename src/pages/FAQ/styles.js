@@ -46,6 +46,7 @@ export const Content = styled.main`
         display: flex;
         align-items: center;
         transition: 0.3s;
+        outline: none;
         cursor: pointer;
 
         svg {

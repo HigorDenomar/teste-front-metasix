@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import FAQ from './pages/frequentlyAskedQuestions';
+import FAQ from './pages/FAQ';
 import Home from './pages/Home';
 import Locations from './pages/Locations';
 import Categories from './pages/Categories';

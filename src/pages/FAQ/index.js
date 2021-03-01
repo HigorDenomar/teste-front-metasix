@@ -31,14 +31,16 @@ export default function FrequentlyAskedQuestions() {
 
   useEffect(handleGetData, []);
 
-  useEffect(() => {
+  function handleSearchQuestion(event) {
+    event.preventDefault();
+
     const filtered = questions.filter(({ question }) => {
 
       return question.toLowerCase().includes(search) && question;
     });
 
     setFilteredQuestions(filtered);
-  }, [search]);
+  }
 
   return (
     <>
@@ -57,7 +59,7 @@ export default function FrequentlyAskedQuestions() {
               onChange={event => setSearch(event.target.value.toLowerCase())}
             />
 
-            <button>
+            <button onClick={ handleSearchQuestion }>
               <FaSearch />
 
               Buscar
